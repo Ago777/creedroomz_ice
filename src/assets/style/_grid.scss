@@ -1,0 +1,227 @@
+.cr-ice {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 244px 1fr;
+  grid-template-areas: 'header' 'body';
+  background-image: url('../resources/bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+  &-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: header;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background-image: linear-gradient(270deg, rgba(#DFB979, 0) 14.09%, #DFB979 50.62%, rgba(#DFB979, 0) 85.68%);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &-logo {
+    width: 515px;
+
+    &-in {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  &-body {
+    width: 100%;
+    max-width: 1392px;
+    grid-area: body;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+  }
+
+  &-list {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas: 'title' 'list';
+
+    &-in {
+      min-width: 0;
+      grid-area: list;
+      padding-right: 6px;
+      padding-left: 6px;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(#fff, 0.1);
+        border-radius: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+
+      @-moz-document url-prefix() {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(#fff, 0.1) transparent;
+      }
+    }
+  }
+
+  &-title {
+    grid-area: title;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    &-in {
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 50px;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &-strong {
+      font-weight: 700;
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-bottom: 30px;
+  }
+
+  &-item {
+    width: 100%;
+
+    &-in {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+
+      &:hover {
+        .cr-ice {
+          &-item {
+            &-img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    &-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 16px;
+      transition: transform 480ms ease-out;
+    }
+  }
+
+  &-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(#000, 0.75);
+      backdrop-filter: blur(30px);
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    &-in {
+      position: relative;
+      width: 100%;
+      max-width: 1039px;
+      margin-right: auto;
+      margin-left: auto;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    &-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 8px;
+      transition: background-color 180ms ease-out;
+      z-index: 1;
+
+      &:hover {
+        background-color: rgba(#fff, 0.1);
+      }
+
+      &-i {
+        width: 100%;
+        height: auto;
+        display: block;
+        fill: #fff;
+      }
+    }
+
+    &-logo {
+      width: 515px;
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: 50px;
+      padding-bottom: 72px;
+
+      &-in {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    &-video {
+      position: relative;
+      width: 100%;
+      height: 732px;
+      background-color: #000;
+      border-radius: 16px;
+      pointer-events: auto;
+      cursor: pointer;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
