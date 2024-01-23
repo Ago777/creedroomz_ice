@@ -1,8 +1,7 @@
-import logo from './assets/resources/logo.svg';
-import './assets/style/style.scss';
-import Tables from "./components/tables";
-import {useState} from "react";
 import VideoPopUp from "./components/video-popup";
+import Tables from "./components/tables";
+import './assets/style/style.scss';
+import {useState} from "react";
 
 function App() {
     const [video, selectVideo] = useState(null);
@@ -10,10 +9,10 @@ function App() {
     const selectVideoHandler = (video) => selectVideo(video);
 
     return (
-        <div className='cr-ice'>
+        <div className='cr-ice' style={{backgroundImage: `url(${process.env.PUBLIC_URL + 'assets/resources/bg.png'})`}}>
             <div className='cr-ice-header'>
                 <div className='cr-ice-logo'>
-                    <img className='cr-ice-logo-in' src={logo} alt=''/>
+                    <img className='cr-ice-logo-in' src={process.env.PUBLIC_URL + 'assets/resources/logo.svg'} alt=''/>
                 </div>
             </div>
             <div className='cr-ice-body'>

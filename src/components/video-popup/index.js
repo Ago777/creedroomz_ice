@@ -1,4 +1,3 @@
-import logo from "../../assets/resources/logo.svg";
 import React from 'react';
 
 const VideoPopUp = props => {
@@ -9,13 +8,12 @@ const VideoPopUp = props => {
             <div className='cr-ice-popup-overlay' onClick={() => selectVideo(null)}/>
             <div className='cr-ice-popup-in'>
                 <div className='cr-ice-popup-logo'>
-                    <img className='cr-ice-popup-logo-in' src={logo} alt=''/>
+                    <img className='cr-ice-popup-logo-in' src={process.env.PUBLIC_URL + 'assets/resources/logo.svg'} alt=''/>
                 </div>
                 <div className={`cr-ice-popup-video`}>
                     <video controls loop autoPlay>
                         <source src={video} type={"video/mp4"}/>
                     </video>
-                    {/*<img className='' src={table.img} alt=''/>*/}
                     <button className='cr-ice-popup-close' onClick={() => selectVideo(null)}>
                         <svg
                             className='cr-ice-popup-close-i'
